@@ -1,0 +1,40 @@
+package com.company;
+
+
+import java.io.FileWriter;
+import java.util.*;
+
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        ArrayList <Technics> array = new ArrayList<Technics>();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите процент сикдки :");
+        int procent = sc.nextInt();
+        Random random = new Random();
+        int sum = 0;
+        double sumdiscount = 0;
+        for(int i = 0;i <= 50;i++){
+            int numpk = random.nextInt(101);
+            int numnotebook = random.nextInt(101);
+            NoteBook noteBook = new NoteBook("DELL",numnotebook,procent);
+            Pk pk = new Pk("Asus",numpk,procent);
+            sum   =  numnotebook + numpk  + sum;
+            sumdiscount = pk.getPrice + noteBook.getPrice  + sumdiscount;
+            array.add( i,noteBook);
+            array.add(i  + 1,pk);
+        }
+        System.out.println(array);
+        System.out.println("Цена всей техники : " + sum + "\nЦена со скидкой  : " + sumdiscount);
+        System.out.println("Введите цену и модель : ");
+        String models = sc.nextLine();
+        int price = sc.nextInt();
+        for(int i = 0;i < 101;i++){
+            int index = array.indexOf(models);
+            if(array.get(i).price == price && index == i){
+                System.out.println(array.get(i));
+            }
+        }
+    }
+}
