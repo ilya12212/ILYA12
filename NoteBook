@@ -1,0 +1,53 @@
+package com.company;
+
+public class NoteBook extends  Technics{
+    double getPrice = price - (price * procent / 100);
+    public NoteBook(String models, int price, int procent) {
+        super(models, price, procent);
+    }
+
+    @Override
+    public void setGetPrice(int getPrice) {
+        this.getPrice = getPrice;
+    }
+
+    @Override
+    public double getGetPrice() {
+        return getPrice;
+    }
+
+    @Override
+    public void setModels(String models) {
+        super.setModels(models);
+    }
+
+    @Override
+    public void setPrice(int price) {
+        super.setPrice(price);
+    }
+
+    @Override
+    public void setProcent(int procent) {
+        super.setProcent(procent);
+    }
+
+    @Override
+    public int getPrice() {
+        return super.getPrice();
+    }
+
+    @Override
+    public int getProcent() {
+        return super.getProcent();
+    }
+
+    @Override
+    public String getModels() {
+        return super.getModels();
+    }
+    @Override
+    public  String toString(){
+        String message = ("\nModels = " + getModels() + "\nPrice = "  +getPrice() + "\nDiscount = " + getProcent() + "%" + "\nDiscount price = " + getGetPrice());
+        return  message;
+    }
+}
