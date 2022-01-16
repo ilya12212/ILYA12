@@ -1,0 +1,53 @@
+package com.company;
+
+public abstract class Technics {
+    String models;
+    int price;
+    int procent;
+    double getPrice =price- (price * procent / 100);
+
+    public Technics(String models,int price,int procent) {
+        this.models = models;
+        this.price =price;
+        this.procent = procent;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getProcent() {
+        return procent;
+    }
+
+    public double getGetPrice() {
+        return getPrice;
+    }
+
+    public String getModels() {
+        return models;
+    }
+
+    public void setGetPrice(int getPrice) {
+        this.getPrice = getPrice;
+    }
+
+    public void setModels(String models) {
+        this.models = models;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setProcent(int procent) {
+        this.procent = procent;
+    }
+
+
+    @Override
+    public  String toString(){
+        String message = ("\nModels = " + getModels() + "\nPrice = "  +getPrice() + "\nDiscount = " + getProcent() + "%" + "\nDiscount price = " +getGetPrice());
+        return  message;
+    }
+}
